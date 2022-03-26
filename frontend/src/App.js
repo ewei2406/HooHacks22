@@ -9,6 +9,7 @@ import { ThemeProvider } from "styled-components"
 import { theme } from "./Theme"
 import "./App.css"
 import styled from "styled-components"
+import UPCService from "./UPCService"
 
 const Body = styled.div`
     display: flex;
@@ -31,7 +32,7 @@ const App = () => {
             handleError("Barcode Detector not supported.")
         }
     }, [])
-    
+
     const [errorMsg, setErrorMsg] = useState("")
 
     const handleError = (error) => {
@@ -45,7 +46,12 @@ const App = () => {
                 <ErrorMsg msg={errorMsg} />
                 <Title text="HELLO" />
                 <Image src={imageSrc}/>
-                <ImageUpload setImageSrc={setImageSrc}/>
+                <ImageUpload 
+                    setImageSrc={setImageSrc}
+                    barcodeDetector={barcodeDetector}
+                    setResults={setResults}
+                    handleError={handleError}
+                />
                 <LookUpButton
                     barcodeDetector={barcodeDetector}
                     setResults={setResults}
