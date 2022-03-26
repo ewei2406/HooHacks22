@@ -1,5 +1,11 @@
 import React from "react"
 import UPCService from "../UPCService"
+import styled from "styled-components"
+
+const ButtonWrapper = styled.button`
+    background-color: ${p => p.theme.accentColor};
+    font-family: ${p => p.theme.bodyFont};
+`
 
 const LookUpButton = ({ barcodeDetector, setResults, handleError }) => {
 
@@ -25,7 +31,7 @@ const LookUpButton = ({ barcodeDetector, setResults, handleError }) => {
     }
 
     return (
-        <button onClick={handleLookup}>LOOKUP</button>
+        <ButtonWrapper onClick={handleLookup}>LOOKUP</ButtonWrapper>
     )
 }
 

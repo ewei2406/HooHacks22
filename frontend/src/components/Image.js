@@ -7,9 +7,13 @@ const ImageWrapper = styled.img`
 `
 
 const Image = ({ src }) => {
-    return (
-        <ImageWrapper src={src} alt="" id="barcodeImage"/>
-    )
+    if (src === "") {
+        return (<></>)
+    } else {
+        return (
+            <ImageWrapper src={src} alt="" id="barcodeImage" />
+        )
+    }
 }
 
 export default Image
