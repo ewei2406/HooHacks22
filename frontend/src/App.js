@@ -44,7 +44,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <Body>
                 <ErrorMsg msg={errorMsg} />
-                <Title text="HELLO" />
+                <Title text="Nutrinator 3000" />
                 <Image src={imageSrc}/>
                 <ImageUpload 
                     setImageSrc={setImageSrc}
