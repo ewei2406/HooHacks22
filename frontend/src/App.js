@@ -25,9 +25,12 @@ const App = () => {
     const [results, setResults] = useState([])
 
     useEffect(() => {
-        // eslint-disable-next-line no-undef
-        setBarcodeDetector(new BarcodeDetector())
-
+        if ('BarcodeDetector' in window) {
+            // eslint-disable-next-line no-undef
+            setBarcodeDetector(new BarcodeDetector())
+        } else {
+            handleError("Barcode Detector not supported.")
+        }
     }, [])
 
     const [errorMsg, setErrorMsg] = useState("")
