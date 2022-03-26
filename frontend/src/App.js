@@ -9,10 +9,13 @@ import { ThemeProvider } from "styled-components"
 import { theme } from "./Theme"
 import "./App.css"
 import styled from "styled-components"
-import UPCService from "./UPCService"
+import { InputWrapper } from "./InputWrapper"
+import InputBox from "./components/InputBox"
 
 const Body = styled.div`
+    padding: 10px 20px;
     display: flex;
+    gap: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -22,7 +25,7 @@ const App = () => {
 
     const [barcodeDetector, setBarcodeDetector] = useState()
     const [imageSrc, setImageSrc] = useState("")
-    const [results, setResults] = useState([])
+    const [results, setResults] = useState()
 
     useEffect(() => {
         if ('BarcodeDetector' in window) {
@@ -44,19 +47,15 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <Body>
                 <ErrorMsg msg={errorMsg} />
-                <Title text="HELLO" />
-                <Image src={imageSrc}/>
-                <ImageUpload 
-                    setImageSrc={setImageSrc}
-                    barcodeDetector={barcodeDetector}
-                    setResults={setResults}
-                    handleError={handleError}
-                />
-                <LookUpButton
-                    barcodeDetector={barcodeDetector}
-                    setResults={setResults}
-                    handleError={handleError}
-                />
+                <Title text="GreenCode" />
+
+                <InputBox 
+                    imageSrc={imageSrc}
+                    setImageSrc={setImageSrc} 
+                    barcodeDetector={barcodeDetector} 
+                    setResults={setResults} 
+                    handleError={handleError}/>
+                
                 <Results results={results}/>
             </Body>
         </ThemeProvider>

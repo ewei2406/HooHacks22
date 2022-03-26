@@ -1,13 +1,21 @@
-import React, {useEffect} from "react"
+import React from "react"
 import { ButtonWrapper } from "./ButtonStyle"
 import styled from "styled-components"
-import UPCService from "../UPCService"
 
 const HiddenInput = styled.input`
     display: none;
 `
 
-const ImageUpload = ({ setImageSrc, barcodeDetector, setResults, handleError }) => {
+const LabelWrapper = styled.label`
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+`
+
+const ImageUpload = ({ setImageSrc }) => {
 
     const onImageChange = e => {
         setImageSrc(
@@ -17,10 +25,10 @@ const ImageUpload = ({ setImageSrc, barcodeDetector, setResults, handleError }) 
     return(
 
         <ButtonWrapper>
-            <label>
+            <LabelWrapper>
                 <HiddenInput type="file" name="myImage" onChange={onImageChange} />
-                Custom Upload
-            </label>
+                Upload Image
+            </LabelWrapper>
         </ButtonWrapper>
     )
 }

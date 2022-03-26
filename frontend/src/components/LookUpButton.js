@@ -1,9 +1,8 @@
 import React from "react"
 import UPCService from "../UPCService"
-import styled from "styled-components"
 import { ButtonWrapper } from "./ButtonStyle"
 
-const LookUpButton = ({ barcodeDetector, setResults, handleError }) => {
+const LookUpButton = ({ barcodeDetector, setResults, handleError, imageSrc }) => {
 
     const handleLookup = e => {
         const image = document.getElementById("barcodeImage")
@@ -27,7 +26,7 @@ const LookUpButton = ({ barcodeDetector, setResults, handleError }) => {
     }
 
     return (
-        <ButtonWrapper onClick={handleLookup}>LOOKUP</ButtonWrapper>
+        <ButtonWrapper onClick={imageSrc !== "" ? handleLookup : null} disabled={imageSrc === ""}>Go</ButtonWrapper>
     )
 }
 
