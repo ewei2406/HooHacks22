@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react"
-import UPCService from "./UPCService"
-import styled from "styled-components"
-
-const SmallImg = styled.img`
-    width: 100px;
-`
+import ErrorMsg from "./components/ErrorMsg"
+import ImageUpload from "./components/ImageUpload"
+import Image from "./components/Image"
+import LookUpButton from "./components/LookUpButton"
+import Results from "./components/Results"
 
 const App = () => {
 
@@ -17,29 +16,27 @@ const App = () => {
         setBarcodeDetector(new BarcodeDetector())
     }, [])
     
+    const [errorMsg, setErrorMsg] = useState("")
 
-    const onImageChange = e => {
-        setImageSrc(URL.createObjectURL(e.target.files[0]))
+    const handleError = (error) => {
+        setErrorMsg(error)
+        setTimeout(() => setErrorMsg(""), 2000)
     }
 
-    const handleLookup = e => {
-        const image = document.getElementById("barcodeImage")
-        barcodeDetector
-            .detect(image)
-            .then(b => {
-                const code = b[0].rawValue
-                console.log(code)
-                UPCService.lookupUPC(code)
-                    .then(res => console.log(res))
-                    .catch(err => console.log("DIdnt work"))
-            })
-    }
-    
     return (
         <div>
-            <SmallImg src={imageSrc} alt="" id="barcodeImage"/>
-            <input type="file" name="myImage" onChange={onImageChange} />
-            <button onClick={handleLookup}>LOOKUP</button>
+            <ErrorMsg msg={errorMsg}/>
+            <Image src={imageSrc}/>
+            <ImageUpload setImageSrc={setImageSrc}/>
+
+            <LookUpButton 
+                barcodeDetector={barcodeDetector}
+                setResults={setResults}
+                handleError={handleError}
+            />
+
+            <Results results={results}/>
+
         </div>
     )
 }
