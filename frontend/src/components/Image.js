@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 const ImageWrapper = styled.img`
     width: 200px;
-    border: 5px solid red;
+    border: 2px solid #919191;
+    border-radius:10px;
 `
 
 const Image = ({ src }) => {
