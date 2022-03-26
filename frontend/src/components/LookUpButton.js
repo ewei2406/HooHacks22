@@ -1,11 +1,7 @@
 import React from "react"
 import UPCService from "../UPCService"
 import styled from "styled-components"
-
-const ButtonWrapper = styled.button`
-    background-color: ${p => p.theme.accentColor};
-    font-family: ${p => p.theme.bodyFont};
-`
+import { ButtonWrapper } from "./ButtonStyle"
 
 const LookUpButton = ({ barcodeDetector, setResults, handleError }) => {
 

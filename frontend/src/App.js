@@ -4,9 +4,18 @@ import ImageUpload from "./components/ImageUpload"
 import Image from "./components/Image"
 import LookUpButton from "./components/LookUpButton"
 import Results from "./components/Results"
+import Title from "./components/Title"
 import { ThemeProvider } from "styled-components"
 import { theme } from "./Theme"
 import "./App.css"
+import styled from "styled-components"
+
+const Body = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
 
 const App = () => {
 
@@ -28,8 +37,9 @@ const App = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <div>
-                <ErrorMsg msg={errorMsg}/>
+            <Body>
+                <ErrorMsg msg={errorMsg} />
+                <Title text="HELLO" />
                 <Image src={imageSrc}/>
                 <ImageUpload setImageSrc={setImageSrc}/>
                 <LookUpButton
@@ -38,7 +48,7 @@ const App = () => {
                     handleError={handleError}
                 />
                 <Results results={results}/>
-            </div>
+            </Body>
         </ThemeProvider>
     )
 }

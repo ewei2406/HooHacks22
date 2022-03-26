@@ -1,5 +1,10 @@
 import React from "react"
+import { ButtonWrapper } from "./ButtonStyle"
+import styled from "styled-components"
 
+const HiddenInput = styled.input`
+    display: none;
+`
 
 const ImageUpload = ({ setImageSrc }) => {
 
@@ -8,7 +13,13 @@ const ImageUpload = ({ setImageSrc }) => {
     }
 
     return(
-        <input type="file" name="myImage" onChange={onImageChange} />
+
+        <ButtonWrapper>
+            <label>
+                <HiddenInput type="file" name="myImage" onChange={onImageChange} />
+                Custom Upload
+            </label>
+        </ButtonWrapper>
     )
 }
 
