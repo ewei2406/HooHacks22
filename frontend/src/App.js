@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react"
 import ErrorMsg from "./components/ErrorMsg"
-import ImageUpload from "./components/ImageUpload"
-import Image from "./components/Image"
-import LookUpButton from "./components/LookUpButton"
-import Results from "./components/Results"
+import Results from "./components/Results/Results"
 import Title from "./components/Title"
 import { ThemeProvider } from "styled-components"
 import { theme } from "./Theme"
 import "./App.css"
 import styled from "styled-components"
-import { InputWrapper } from "./InputWrapper"
 import InputBox from "./components/InputBox"
 
 const Body = styled.div`
+    color: ${p => p.theme.textColor};
     padding: 10px 20px;
     display: flex;
     gap: 20px;
