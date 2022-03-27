@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:gh": "rm -r ../docs && npm run build && mv build docs && mv docs ..",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
