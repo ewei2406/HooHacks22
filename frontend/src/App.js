@@ -17,6 +17,7 @@ const Body = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 1.2em;
 `
 
 const App = () => {

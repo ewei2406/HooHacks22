@@ -6,7 +6,7 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     font-weight: 400;
     display: flex;
-    font-size: 0.9rem;
+    font-size: 1rem;
     align-items: center;
     gap: 5px;
     margin-bottom: 5px;
@@ -27,7 +27,7 @@ const Tag = styled.div`
     text-transform: capitalize;
     background-color: ${p => p.theme.primaryColor};
     color: ${p => p.theme.accentColor};
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     border-radius: 5px;
     padding: 5px;
 `
