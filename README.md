@@ -47,7 +47,26 @@ Ever wondered the sustainability behind your favorite snack brands? With Greenco
 </table>
 
 # About
-I created this project because I wanted to find new music. Finding new music on Spotify is somewhat annoying because the recommendations are usually songs already in my library. I wanted to be able to quickly sift through songs and create playlists with varied taste.
+### Inspiration
+Labels on food or snack products are generally misleading, and consumers can miss important information because it printed too small or represented in a confusing way. Additionally, packaging will generally not provide any information on the ethics or environmental sustainability of the products you are buying.
+
+We created Greencode to help consumers make environmentally-conscious and health-conscious purchasing decisions with very little friction.
+
+With Greencode, people can upload an image of the product with its barcode to a web app, and we will instantly find all of the important information you need to know to make an **informed purchase**.
+
+### What it does
+Greencode will let you upload an image of your choice, from either your computer or your phone, and search for all of the information that we deemed to be most important. These include:
+* The company and product names.
+* The food group the product is part of.
+* The carbon footprint (in kg) to produce the product.
+* An formulated eco-score, based on transportation, a forest score, and a package sustainability.
+* A nutrition score based on the FSAm-Npm score standard set by the World Health Organization.
+* A health score based on the amount of processing done to the snack item.
+* Potential allergens.
+* An ingredient list, showing the top ingredients by weight in the product.
+
+
+
 
 
 # Tech stack
