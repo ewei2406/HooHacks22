@@ -32,8 +32,8 @@ Ever wondered the sustainability behind your favorite snack brands? With Greenco
      <td align="center"><em>Granola</em></td>
   </tr>
   <tr>
-    <td><img src="./assets/Scan1.png" width="300"></td>
     <td><img src="./assets/Scan2.png" width="300"></td>
+    <td><img src="./assets/Scan3.png" width="300"></td>
   </tr>
 </table>
 
