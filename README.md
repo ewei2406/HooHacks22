@@ -1,6 +1,6 @@
 [![Tindify Logo](./assets/Logo.png)](https://green-code-app.herokuapp.com/)
 
-# GreenCode: Promoting Informed, Consumption
+# GreenCode: Promoting Informed Consumption
 
 Ever wondered the sustainability behind your favorite snack brands? With Greencode, a quick picture from a smartphone provides an environmental rating as well as ingredients and potential allergens.
 
@@ -39,7 +39,7 @@ Ever wondered the sustainability behind your favorite snack brands? With Greenco
 
 <table>
   <tr>
-     <td align="center"><em>Upload on IOS</em></td>
+     <td align="center"><em>Upload on iOS</em></td>
   </tr>
   <tr>
     <td><img src="./assets/ios.png" width="300"></td>
