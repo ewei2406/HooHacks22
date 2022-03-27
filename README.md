@@ -18,18 +18,18 @@ Ever wondered the sustainability behind your favorite snack brands? With Greenco
 <table>
   <tr>
      <td align="center"><em>Home Page</em></td>
-     <td align="center"><em>Take photo</em></td>
+     <td align="center"><em>Arizona</em></td>
   </tr>
   <tr>
     <td><img src="./assets/Home.png" width="300"></td>
-    <td><img src="./assets/Scan3.png" width="300"></td>
+    <td><img src="./assets/Scan1.png" width="300"></td>
   </tr>
 </table>
 
 <table>
   <tr>
-     <td align="center"><em>Bread</em></td>
-     <td align="center"><em>Spam</em></td>
+     <td align="center"><em>Funyun</em></td>
+     <td align="center"><em>Granola</em></td>
   </tr>
   <tr>
     <td><img src="./assets/Scan1.png" width="300"></td>
