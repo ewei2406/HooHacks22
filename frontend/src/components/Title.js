@@ -15,7 +15,7 @@ const Logo = styled.img`
 `
 
 const Title = ({ text }) => {
-    return (<TitleWrapper>{text} <Logo src={require('./Plant.png')} alt="logo"/></TitleWrapper>)
+    return (<TitleWrapper>🌱 {text}</TitleWrapper>)
 }
 
 export default Title

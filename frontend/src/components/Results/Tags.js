@@ -24,6 +24,7 @@ const Wrapper2 = styled.div`
 `
 
 const Tag = styled.div`
+    text-transform: capitalize;
     background-color: ${p => p.theme.primaryColor};
     color: ${p => p.theme.accentColor};
     font-size: 0.6rem;

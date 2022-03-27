@@ -4,13 +4,14 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: ${p => p.theme.bodyFont};
+    color: ${p => p.theme.textColor};
 `
 
 const Item = styled.div`
+    font-size: ${p => Math.round(Number(p.size) / 3 + 6)}px;
     text-align: center;
-    font-family: ${p => p.theme.bodyFont};
-    font-size: ${p => Math.round(p.size / 4 + 6)}px;
-    color: ${p => p.theme.textColor};
+    text-transform: capitalize;
     position: relative;
     z-index: 2;
 `
@@ -18,7 +19,10 @@ const Item = styled.div`
 const Row = styled.div`
     cursor: pointer;
     display: flex;
-    width: 150px;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     justify-content: space-between;
 `
 
@@ -27,7 +31,12 @@ const IngredientTags = ({ data }) => {
     return(
         <>
             <Wrapper>
-                {data.sort((a, b) => b.percent_estimate - a.percent_estimate).slice(0, Math.min(data.length, 4)).filter(i => !i.id.includes("%") && (Number(i.percent_max) > 0.02)).map((item, index) =>
+                {data.length ? data
+                    .sort((a, b) => b.percent_estimate - a.percent_estimate)
+                    .slice(0, Math.min(data.length, 4))
+                    .filter(i => !i.id.includes("%") && (Number(i.percent_max) > 0.02))
+                    .filter(i => i.id.slice(0, 2) === "en")
+                    .map((item, index) =>
                     <Row key={item.id} onClick={() => window.open("https://wikipedia.org/wiki/" + item.id.replace("en:", "").replace("-", "_"))}>
                         <Item
                             size={item.percent_estimate}
@@ -35,10 +44,10 @@ const IngredientTags = ({ data }) => {
                         
                         <Item
                             size={item.percent_estimate}
-                            
-                        >{item.id.replace("en:", "").replace("-", " ")}</Item>
+                            style={{width: 150}}
+                            >{item.id.replace("en:", "").replaceAll("-", " ")}</Item>
                     </Row>
-                )}
+                ) : "No data"}
             </Wrapper>
         </>
     )

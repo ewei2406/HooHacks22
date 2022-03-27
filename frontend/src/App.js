@@ -7,6 +7,7 @@ import { theme } from "./Theme"
 import "./App.css"
 import styled from "styled-components"
 import InputBox from "./components/InputBox"
+import Info from "./components/Info"
 
 const Body = styled.div`
     color: ${p => p.theme.textColor};
@@ -54,6 +55,8 @@ const App = () => {
                     handleError={handleError}/>
                 
                 <Results results={results}/>
+                
+                <Info/>
             </Body>
         </ThemeProvider>
     )

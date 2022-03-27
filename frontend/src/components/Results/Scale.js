@@ -4,8 +4,8 @@ const Wrapper = styled.div`
     border-radius: 100%;
     width: 50px;
     height: 50px;
-    background-color: ${p => getColorRGB(p.value, 255, 200, 200, 200, 240, 180)};
-    color: ${p => getColorRGB(p.value, 255, 0, 0, 118, 186, 27)};
+    background-color: ${p => p.noColor ? p.theme.primaryColor : getColorRGB(p.value, 255, 200, 200, 200, 240, 180)};
+    color: ${p => p.noColor ? p.theme.accentColor : getColorRGB(p.value, 255, 0, 0, 118, 186, 27)};
     font-family: ${p => p.theme.headingFont};
     font-weight: 400;
     display: flex;
@@ -19,6 +19,8 @@ const Wrapper = styled.div`
 const Wrapper2 = styled.div`
     display: flex;
     align-items: center;
+    text-align:center;
+    margin-bottom: 5px;
     flex-direction: column;
     font-family: ${p => p.theme.headingFont};
     font-weight: 800;
@@ -43,22 +45,15 @@ const getColorRGB = (value, r0, g0, b0, r1, g1, b1) => {
     return `rgb(${r}, ${g}, ${b})`
 }
 
-const Scale = ({ value, name, icon }) => {
-
-    function scale(number, inMin, inMax, outMin, outMax) {
-        return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-    }
-
-    console.log(value)
-    console.log(scale(value, 0, 1, -70, 70))
+const Scale = ({ value, name, icon, noColor, suffix }) => {
 
     return (
         <Wrapper2>
-            {name}
-            <Wrapper value={value}>
-                {Math.round(value)}
-                <IconWrapper>{icon}</IconWrapper>
+            <Wrapper value={value} noColor={noColor || value === -999}>
+                {value === -999 ? "?" : Math.round(value * 10) / 10}{suffix}
+                {icon ? <IconWrapper>{icon}</IconWrapper> : null}
             </Wrapper>
+            {name}
         </Wrapper2>
     )
 }
